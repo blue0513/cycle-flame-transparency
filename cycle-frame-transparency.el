@@ -1,10 +1,10 @@
-;;; cycle-flame-transparency --- cycle flame transparency
+;;; cycle-frame-transparency --- cycle frame transparency
 
 ;; Copyright (C) 2018 Taiju Aoki
 
 ;; Author: Taiju Aoki <aokitaiju0513@gmail.com>
 ;; Version: 0.1
-;; URL: https://github.com/blue0513/cycle-flame-transparency
+;; URL: https://github.com/blue0513/cycle-frame-transparency
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,43 +23,43 @@
 
 ;; Add the following to your Emacs init file:
 ;;
-;; (require 'cycle-flame-transparency)
+;; (require 'cycle-frame-transparency)
 ;;
-;; You can cycle the flame transparency.
+;; You can cycle the frame transparency.
 
 ;;; Code:
 
-(defgroup cycle-flame-transparency nil
-  "Cycle the flame transparency."
-  :group 'cycle-flame-transparency)
+(defgroup cycle-frame-transparency nil
+  "Cycle the frame transparency."
+  :group 'cycle-frame-transparency)
 
 (defcustom cft--trasparent 80
-  "Transparency of the flame."
+  "Transparency of the frame."
   :type 'integer
-  :group 'cycle-flame-transparency)
+  :group 'cycle-frame-transparency)
 
 (defcustom cft--non-transparent 100
-  "Default transparency of the flame."
+  "Default transparency of the frame."
   :type 'integer
-  :group 'cycle-flame-transparency)
+  :group 'cycle-frame-transparency)
 
-(defun set-flame-transparency (transparency)
-  "Set flame transparency to TRANSPARENCY."
+(defun set-frame-transparency (transparency)
+  "Set frame transparency to TRANSPARENCY."
   (set-frame-parameter nil 'alpha transparency))
 
-(defun check-flame-transparency ()
-  "Check if the flame is transparent."
+(defun check-frame-transparency ()
+  "Check if the frame is transparent."
   (and (not (eq (frame-parameter nil 'alpha) nil))
   (< (frame-parameter nil 'alpha) cft--non-transparent)))
 
 ;;;###autoload
 (defun cycle-transparency ()
-  "Cycle the flame transparency from default to transparent."
+  "Cycle the frame transparency from default to transparent."
   (interactive)
-  (if (check-flame-transparency)
-      (set-flame-transparency cft--non-transparent)
-    (set-flame-transparency cft--trasparent)))
+  (if (check-frame-transparency)
+      (set-frame-transparency cft--non-transparent)
+    (set-frame-transparency cft--trasparent)))
 
-(provide 'cycle-flame-transparency)
+(provide 'cycle-frame-transparency)
 
-;;; cycle-flame-transparency.el ends here
+;;; cycle-frame-transparency.el ends here

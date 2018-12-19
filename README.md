@@ -1,6 +1,6 @@
-# Cycle Flame Transparency
+# Cycle Frame Transparency
 
-Cycle the flame transparency!!
+Cycle the frame transparency!!
 
 ## How It Works
 
@@ -12,7 +12,7 @@ In your `init.el`, write code as bellow.
 
 ```elisp
 (add-to-list 'load-path "YOUR PATH")
-(require 'cycle-flame-transparency)
+(require 'cycle-frame-transparency)
 
 ;; customize the level of transparency (default: 80)
 (setq cft--trasparent 80)
